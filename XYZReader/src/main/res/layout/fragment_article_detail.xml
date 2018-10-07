@@ -23,7 +23,8 @@
                 android:id="@+id/photo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scaleType="fitXY" />
+                android:scaleType="fitXY"
+                android:contentDescription="@string/article_list_item" />
 
             <TextView
                 android:id="@+id/article_title"

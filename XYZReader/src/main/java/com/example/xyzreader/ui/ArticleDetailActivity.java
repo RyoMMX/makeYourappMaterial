@@ -27,12 +27,6 @@ import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.ItemsContract;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-/**
- * An activity representing a single Article detail screen, letting you swipe between articles.
- */
 public class ArticleDetailActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -40,8 +34,6 @@ public class ArticleDetailActivity extends AppCompatActivity
     private ImageView imageIv;
     private Cursor mCursor;
     private long mStartId;
-
-    private long mSelectedItemId;
 
     private ViewPager mPager;
     private MyPagerAdapter mPagerAdapter;
@@ -93,14 +85,12 @@ public class ArticleDetailActivity extends AppCompatActivity
                 if (mCursor != null) {
                     mCursor.moveToPosition(position);
                 }
-                mSelectedItemId = mCursor.getLong(ArticleLoader.Query._ID);
             }
         });
 
         if (savedInstanceState == null) {
             if (getIntent() != null && getIntent().getData() != null) {
                 mStartId = ItemsContract.Items.getItemId(getIntent().getData());
-                mSelectedItemId = mStartId;
             }
         }
     }
@@ -137,25 +127,16 @@ public class ArticleDetailActivity extends AppCompatActivity
         mPagerAdapter.notifyDataSetChanged();
     }
 
-    public void onUpButtonFloorChanged(long itemId, ArticleDetailFragment fragment) {
-        if (itemId == mSelectedItemId) {
-        }
-    }
-
-
     private class MyPagerAdapter extends FragmentStatePagerAdapter {
         SparseArray<ArticleDetailFragment> fragmentSparseArray = new SparseArray<>();
 
-        public MyPagerAdapter(FragmentManager fm) {
+        MyPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
         @Override
         public void setPrimaryItem(ViewGroup container, int position, Object object) {
             super.setPrimaryItem(container, position, object);
-            ArticleDetailFragment fragment = (ArticleDetailFragment) object;
-            if (fragment != null) {
-            }
         }
 
         @Override

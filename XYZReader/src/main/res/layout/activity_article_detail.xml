@@ -20,7 +20,7 @@
             android:layout_height="300dp"
             app:contentScrim="?colorPrimary"
             app:expandedTitleMarginBottom="94dp"
-            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
+            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Display1"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:title="loading ...">
 
@@ -30,7 +30,8 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 android:src="@drawable/loading"
-                android:tint="#BBE64A19" />
+                android:tint="#BBE64A19"
+                android:contentDescription="@string/background_article_image" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
