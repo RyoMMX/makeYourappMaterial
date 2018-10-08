@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="16dp"
+        app:cardElevation="@dimen/card_view_elevation">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,8 +24,8 @@
                 android:id="@+id/photo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scaleType="fitXY"
-                android:contentDescription="@string/article_list_item" />
+                android:contentDescription="@string/article_list_item"
+                android:scaleType="fitXY" />
 
             <TextView
                 android:id="@+id/article_title"
